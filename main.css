@@ -9,7 +9,7 @@ body {
 header {
   margin: 0;
   padding: 15px;
-  background: #3f51b5;
+  background: #242e67/*#3f51b5*/;
   color:rgba(255,255,255,1);
   box-shadow: 0 0 1px 1.5px #dadada;
 }
@@ -24,6 +24,10 @@ header nav .header-nav {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+header nav .header-nav li {
+  font-size: 1.5em;
 }
 
 header nav .header-nav li.back-arrow ~ li:not(:last-child) {
@@ -74,40 +78,73 @@ ul.list {
   padding:0;
 }
 
-ul.list li {
+.list li {
   margin-bottom:15px;
   padding:0;
   line-height:2.5;
   background: transparent;
-  border-left: 5px solid #3f51b5;
+  border-left: 5px solid #ff3f80;
   box-shadow:1px 1px 2px #555;
 }
 
-ul.list li a {
+.list li a {
   margin:0;
   padding: 0 0 0 1em;
 }
 
-ul.list li a:hover {
+.list li a:hover {
   cursor: pointer;
-  background: #3f51b5;
+  background: #ff3f80;
   color: rgba(255,255,255,1);
+}
+
+.list li.done {
+  border-color: #242e67/*#3f51b5*/;
+}
+
+.list li.done a:hover {
+  background: #242e67/*#3f51b5*/;
 }
 
 .list li a .item-description {
   margin-left:15px;
   margin-top:5px;
+}
+
+.list li a .item-description,
+.list li a .item-status {
   font-size: .8em;
   color:rgba(0,0,0,.54);
 }
 
-.list li a:hover .item-description {
+.list li a:hover .item-description,
+.list li a:hover .item-status {
   color: rgba(255,255,255,.7);
 }
 
-.list li a .item-arrow {
-  float: right;
+.list li a > .right-box {
+  float:right;
+  text-align: right;
+}
+
+.list li a .item-status {
+  font-style: italic;
+  bottom:10px;
   margin-right: 15px;
+}
+
+.list li a .item-arrow {
+  margin-right: 15px;
+  color: #ff3f80;
+}
+
+.list li a:hover .item-arrow,
+.list li.done a:hover .item-arrow {
+  color: rgba(255,255,255,1);
+}
+
+.list li.done a .item-arrow {
+  color: #242e67;
 }
 
 .button:hover {
@@ -130,14 +167,14 @@ ul.list li a:hover {
 }
 
 .fg-primary {
-  color: #3f51b5;
+  color: #242e67/*#3f51b5*/;
 }
 
 .fg-accent {
   color:#ff3f80;
 }
 
-.fg-secondary__light {
+.fg-secondary__light {#242e67
   color: rgba(0,0,0,.54);
 }
 
@@ -146,7 +183,7 @@ ul.list li a:hover {
 }
 
 .bg-primary {
-  background: #3f51b5;
+  background: #242e67/*#3f51b5*/;
   color:rgba(255,255,255,1);
 }
 
@@ -230,8 +267,8 @@ ul.list li a:hover {
 .progressbar li.current::before,
 .progressbar li.done::before,
 .progressbar li.done::after {
-  border-color: #3f51b5;
-  background: #3f51b5;
+  border-color: #242e67/*#3f51b5*/;
+  background: #242e67/*#3f51b5*/;
 }
 
 .progressbar li a {
@@ -250,7 +287,7 @@ ul.list li a:hover {
 }
 
 .panel.gov header {
-  background: #4caf50;
+  background: #0c6f0c/*#4caf50*/;
 }
 
 .panel.opp header {
@@ -267,12 +304,13 @@ ul.list li a:hover {
 
 .panel header .position-header {
   font-size: .8em
-  color:rgba(0,0,0,.54);
+  color:rgba(0,0,0,.7);
   margin-left: 10px;
 }
 
 .panel header .team-header {
   font-weight: bold;
+  font-size: 1.2em;
 }
 
 .panel header .panel-arrow {
@@ -320,40 +358,36 @@ ul.list li a:hover {
   display: flex;
 }
 
-.panel.navigation button {
+.panel.navigation .button {
   flex:1;
 }
 
-.panel.navigation button:first-child {
+.panel.navigation .button:first-child {
   text-align: left;
   margin-right:5px;
 }
 
-.panel.navigation button:last-child {
+.panel.navigation .button:last-child {
   text-align: right;
   margin-left:5px;
 }
 
-/* on tablet / desktop devices (larger than iPhone 6 Plus) */
-@media only screen and (min-width: 415px) {
+/* on desktop (larger than iPad) */
+@media only screen and (min-width: 769px) {
   header nav .header-nav li.back-arrow ~ li:not(:last-child) {
     display: inline-block;
   }
 
-  header nav .header-nav li.back-arrow {
-    font-size: 1.5em
+  header nav .header-nav li.back-arrow ~ li:nth-child(n+4) {
+    margin-left: 10px;
   }
-
-  header nav .header-nav li.back-arrow ~ li {
-    font-size: 1.5em;
-  }
-/*
   header nav .header-nav li.back-arrow ~ li:nth-child(n+4)::before {
     content: "/";
-    display: inline-block;
-    margin-right:5px;
+    display: inline;
+    position: absolute;
+    margin-left: -20px;
   }
-*/
+
   header nav .header-nav li.back-arrow ~ li:last-child {
     font-weight: normal;
   }
