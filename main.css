@@ -392,10 +392,23 @@ a.button {
   font-size: 1.2em;
   font-weight: bold;
   outline: none;
-  border:none /*1px solid #dadada*/;
+  border:1px solid transparent /*1px solid #dadada*/;
   width:2em;
   text-align: center;
   -moz-appearance:textfield;
+}
+
+/*.panel main fieldset.row .row .item-checkbox,*/
+.panel main fieldset.row .row .item-spinner input[type=number],
+.panel main fieldset.row .row .item-score.total input[type=number] {
+  transition: border-bottom .2s linear .1s;
+}
+
+/*.panel main fieldset.row .row .item-checkbox,*/
+.panel main fieldset.row .row .item-spinner input[type=number]:focus,
+.panel main fieldset.row .row .item-score.total input[type=number]:focus {
+  border-bottom:1px solid #242e67;
+  transition: border-bottom .2s linear .1s;
 }
 
 .panel main fieldset.row .row .item-score.total input[type=number] {
@@ -439,7 +452,7 @@ a.button {
 
 .panel main .item-checkbox {
   display: inline-flex;
-  border:1px solid #dadada;
+  border:1px solid #242e67;
   border-radius: 5px;
 }
 
@@ -459,12 +472,17 @@ a.button {
 }
 
 .panel main .item-checkbox input[type=radio] {
+  /*visibility: hidden;
+  width:0;
+  height:0;
+  margin:0;
+  padding:0;*/
   display: none;
 }
 
 .panel main .item-checkbox input[type=radio] + label {
   background: transparent;
-  color: rgba(0,0,0,.38);
+  color: #242e67/*rgba(0,0,0,.38)*/;
 }
 
 .panel main .item-checkbox input[type=radio]:checked + label {
