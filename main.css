@@ -365,6 +365,25 @@ a.button {
   background: white;
 }
 
+.panel main .row.position,
+.panel main .row.winner {
+  display: flex;
+}
+
+.panel main .row.position .item {
+  flex:1;
+}
+
+.panel main .row .gov-score-total,
+.panel main .row .opp-score-total {
+  font-size: 1.2em;
+  font-weight: bold; 
+}
+
+.panel main .row.winner .item-checkbox {
+  width:100%;
+}
+
 .panel main fieldset.row {
   border: none;
   margin:0 0 1em;
@@ -383,6 +402,11 @@ a.button {
 
 .panel main fieldset.row .row {
   display:flex;
+}
+
+.panel main fieldset.row .row .item-spinner,
+.panel main fieldset.row .row .item-score.total {
+  margin-right:10px;
 }
 
 .panel main fieldset.row .row .item-spinner input[type=number],
@@ -428,13 +452,13 @@ a.button {
   cursor: pointer;
 }
 
-.panel main fieldset.row .row .item-score-max {
+.panel main .row .item-score-max {
   padding-top:2px;
 }
 
-.panel main fieldset.row .row .item-score-max::before {
+.panel main .row .item-score-max::before {
   content:"/";
-  margin-left: 15px;
+  margin-left: 5px;
   margin-right: 5px;
 }
 
@@ -465,6 +489,10 @@ a.button {
 
 .panel main .item-checkbox label:nth-child(2) {
   border-radius: 5px 0 0 5px;
+}
+
+.panel main .item-checkbox label:nth-child(n+3) {
+  border-left: 1px solid #242e67;
 }
 
 .panel main .item-checkbox label:last-child {

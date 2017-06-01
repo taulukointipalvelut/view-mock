@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="../main.css">
+  <title>Adjudicator 1's Score Sheets - Round 1 of Tournament A - utab admin</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="header-nav">
+        <li class="back-arrow"><a href="index.html"><i class="fa fa-arrow-left"></i></a></li>
+        <li><a href="#">utab admin</a></li>
+        <li><a href="../tournament_a.html">Tournament A</a></li>
+        <li><a href="../round_1.html">Round 1</a></li>
+        <li><a href="../ballots_index.html">Score Sheets</a></li>
+        <li><a href="#">Adjudicator 1</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Who's Winner?</h1>
+    <section class="panel info">
+      <ul class="progressbar">
+        <li class="done"><a href="#">Select Names</a></li>
+        <li class="done"><a href="#">Ballot</a></li>
+        <li class="current"><a href="#">Winner</a></li>
+        <li><a href="#">Check</a></li>
+        <li><a href="#">Done</a></li>
+      </ul>
+    </section>
+    <section class="panel">
+      <main>
+        <form>
+          <div class="row position">
+            <span class="item gov">Gov</span>
+            <span class="item gov-score"><span class="gov-score-total">40</span><span class="item-score-max">80</span></span>
+            <span class="item opp">Opp</span>
+            <span class="item opp-score"><span class="opp-score-total">40</span><span class="item-score-max">80</span></span>
+          </div>
+          <div class="row winner">
+            <span class="item-checkbox">
+              <input type="radio" id="gov-win" name="winner" tabindex="1" />
+              <label for="gov-win">Team1</label>
+              <input type="radio" id="opp-win" name="winner" tabindex="2" />
+              <label for="opp-win">Team2</label>
+            </span>
+          </div>
+        </form>
+      </main>
+    </section>
+    <section class="panel navigation">
+      <a class="button" href="pm.html" tabindex="7"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Back</a>
+      <a class="button bg-primary" href="check.html" tabindex="8">Next&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+    </section>
+  </main>
+</body>
+</html>
