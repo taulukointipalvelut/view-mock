@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="../main.css">
+  <title>Adjudicator 1's Score Sheets - Round 1 of Tournament A - utab admin</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="header-nav">
+        <li class="back-arrow"><a href="index.html"><i class="fa fa-arrow-left"></i></a></li>
+        <li><a href="#">utab admin</a></li>
+        <li><a href="../tournament_a.html">Tournament A</a></li>
+        <li><a href="../round_1.html">Round 1</a></li>
+        <li><a href="../ballots_index.html">Score Sheets</a></li>
+        <li><a href="#">Adjudicator 1</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Speaker A <span class="sub-h1">PM</span></h1>
+    <section class="panel info">
+      <ul class="progressbar">
+        <li class="done"><a href="#">Select Names</a></li>
+        <li class="current"><a href="#">Ballot</a></li>
+        <li><a href="#">Winner</a></li>
+        <li><a href="#">Check</a></li>
+        <li><a href="#">Done</a></li>
+      </ul>
+    </section>
+    <section class="panel">
+      <main>
+        <form>
+          <fieldset class="row">
+            <legend>Score</legend>
+            <div class="row">
+              <span class="item-label">Matter</span>
+              <span class="item-score item-spinner">
+                <span class="spinner-down"><i class="fa fa-chevron-circle-left"></i></span>
+                <input type="number" value="5" />
+                <span class="spinner-up"><i class="fa fa-chevron-circle-right"></i></span>
+              </span>
+              <span class="item-score-max">10</span>
+            </div>
+            <div class="row">
+              <span class="item-label">Manner</span>
+              <span class="item-score item-spinner">
+                <span class="spinner-down"><i class="fa fa-chevron-circle-left"></i></span>
+                <input type="number" value="5" />
+                <span class="spinner-up"><i class="fa fa-chevron-circle-right"></i></span>
+              </span>
+              <span class="item-score-max">10</span>
+            </div>
+            <div class="row">
+              <span class="item-label">Total</span>
+              <span class="item-score total">
+                <input type="number" value="10" readonly>
+              </span>
+              <span class="item-score-max">20</span>
+            </div>
+          </fieldset>
+          <fieldset class="row">
+            <legend>Prize</legend>
+            <div class="row">
+              <span class="item-label">Best Debater</span>
+              <span class="item-checkbox">
+                <input type="radio" id="pm-bd-yes" name="pm-bd" />
+                <label for="pm-bd-yes">Yes</label>
+                <input type="radio" id="pm-bd-no" name="pm-bd" checked />
+                <label for="pm-bd-no">No</label>
+              </span>
+            </div>
+            <div class="row">
+              <span class="item-label">POI</span>
+              <span class="item-checkbox">
+                <input type="radio" id="pm-poi-yes" name="pm-poi" />
+                <label for="pm-poi-yes">Yes</label>
+                <input type="radio" id="pm-poi-no" name="pm-poi" checked />
+                <label for="pm-poi-no">No</label>
+              </span>
+            </div>
+          </fieldset>
+        </form>
+      </main>
+    </section>
+    <section class="panel navigation">
+      <a class="button" href="index.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Back</a>
+      <a class="button bg-primary" href="lo.html">Next&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+    </section>
+  </main>
+</body>
+</html>
