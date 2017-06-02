@@ -4,14 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" type="text/css" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="../main.css">
   <title>Adjudicator 1's Score Sheets - Round 1 of Tournament A - utab admin</title>
   <style type="text/css">
+    .panel.winner header {
+      background: #ffb624;
+    }
     .panel main .row .item:first-child {
-      flex: .8;
+      flex: .5;
+    }
+    .panel main .row .item-score:not(.item-spinner):not(.total) {
+      flex:.5;
     }
     .panel main .row .item-role:not(:first-child) {
-      flex:1;
+      flex:.5;
+    }
+    .panel main .row .item-prize {
+      flex:.5;
+      text-align: right;
+      font-size: 1.2em;
+    }
+    .panel main .row .item-prize > *:not(:first-child) {
+      margin-left: 5px;
     }
     .panel main .row .item {
       flex:1;
@@ -21,12 +36,66 @@
     .panel main .row .item-speaker,
     .panel main .row .item-score {
       padding-top: 2px;
+      padding-bottom: 1px;
     }
     .panel main .row .item-revise {
       padding-top: 0;
     }
     .panel main .row .item-speaker {
       font-weight: bold;
+    }
+    .panel main .row .col-2,
+    .panel main .row .item.col-2:first-child {
+      flex:1.8;
+      padding-top: 4px;
+    }
+    .panel main .row .col-2 + .item-score {
+      text-align: right;
+    }
+    .panel main .row.hr {
+      border-top: 1px solid #dadada;
+      margin:1em -3% 1em;
+      padding: 1em 3% 0;
+    }
+    .panel main .row .hr:nth-child(2n) {
+      border-top:1px dotted #dadada;
+      margin:0 0 .5em -3px;
+      padding: 1em 0 0 3px;
+    }
+    .panel main .row .hr:nth-child(2n + 1) {
+      border-top:1px dotted #dadada;
+      margin:0 -3px .5em -1px;
+      padding: 1em 3px 0 1px;
+    }
+    .panel main .row .item-signature {
+      flex:.5;
+    }
+    .panel main fieldset.row .row.no-flexbox {
+      display: block;
+    }
+    input.signature {
+      width:calc(100% - 5px);
+      border-width: 1px;
+      border-style: solid;
+      border-color: transparent;
+      outline:none;
+      font-size: 1.5em;
+      padding: 0 5px;
+      font-style: italic;
+      font-family: 'Homemade Apple', cursive;
+      transition: border-bottom-color .1s linear;
+    }
+    input.signature:focus {
+      border-bottom-color: #242e67;
+      transition: border-bottom-color .1s linear;
+    }
+    .no-bold {
+      font-weight: normal !important;
+    }
+    .no-bold,
+    .no-bold + .item-score {
+      font-size:.8em;
+      color:rgba(0,0,0,.54);
     }
   </style>
 </head>
@@ -44,7 +113,7 @@
     </nav>
   </header>
   <main>
-    <h1>Are you sure?</h1>
+    <h1>Check your ballot</h1>
     <section class="panel info">
       <ul class="progressbar">
         <li class="done"><a href="#">Select Names</a></li>
@@ -67,26 +136,103 @@
           <div class="row">
             <span class="item-role">PM</span>
             <span class="item-speaker">Speaker A</span>
-            <span class="item-score"><span class="item-score-total">10</span><span class="item-score-max">20</span></span>
+            <span class="item-prize"><span class="item-prize-bd"><i class="fa fa-rocket"></i></span><span class="item-prize-poi"><i class="fa fa-hand-paper-o"></i></span></span>
             <span class="item-revise"><a href="#"><i class="fa fa-edit"></i></a></span>
           </div>
           <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Matter</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Manner</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold hr">Total</span>
+            <span class="item-score hr"><span class="item-score-total">10</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row hr">
             <span class="item-role">DPM</span>
             <span class="item-speaker">Speaker B</span>
-            <span class="item-score"><span class="item-score-total">10</span><span class="item-score-max">20</span></span>
+            <span class="item-prize"><span class="item-prize-bd"><i class="fa fa-rocket"></i></span></span>
             <span class="item-revise"><a href="#"><i class="fa fa-edit"></i></a></span>
           </div>
           <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Matter</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Manner</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold hr">Total</span>
+            <span class="item-score hr"><span class="item-score-total">10</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row hr">
             <span class="item-role">MG</span>
             <span class="item-speaker">Speaker C</span>
-            <span class="item-score"><span class="item-score-total">10</span><span class="item-score-max">20</span></span>
+            <span class="item-prize"><span class="item-prize-poi"><i class="fa fa-hand-paper-o"></i></span></span>
             <span class="item-revise"><a href="#"><i class="fa fa-edit"></i></a></span>
           </div>
           <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Matter</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Manner</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold hr">Total</span>
+            <span class="item-score hr"><span class="item-score-total">10</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row hr">
             <span class="item-role">GR</span>
             <span class="item-speaker">Speaker A</span>
-            <span class="item-score"><span class="item-score-total">10</span><span class="item-score-max">20</span></span>
+            <span class="item-prize"></span>
             <span class="item-revise"><a href="#"><i class="fa fa-edit"></i></a></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Matter</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Manner</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold hr">Total</span>
+            <span class="item-score hr"><span class="item-score-total">10</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row hr">
+            <span class="item col-2">Total Score</span>
+            <span class="item-score"><span class="item-score-total">40</span><!--span class="item-score-max">80</span--></span>
+            <span class="item-revise"></span>
           </div>
         </form>
       </main>
@@ -94,7 +240,7 @@
     <section class="panel opp">
       <header>
         <a href="#">
-          <span class="team-header">Team2</span>
+          <span class="team-header">Long Long Team Name A</span>
           <span class="position-header">Opp</span>
           <span class="panel-arrow"><i class="fa fa-chevron-up"></i></span>
         </a>
@@ -104,52 +250,134 @@
           <div class="row">
             <span class="item-role">LO</span>
             <span class="item-speaker">Speaker A</span>
-            <span class="item-score"><span class="item-score-total">10</span><span class="item-score-max">20</span></span>
+            <span class="item-prize"></span>
             <span class="item-revise"><a href="#"><i class="fa fa-edit"></i></a></span>
           </div>
           <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Matter</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Manner</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold hr">Total</span>
+            <span class="item-score hr"><span class="item-score-total">10</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row hr">
             <span class="item-role">DLO</span>
             <span class="item-speaker">Speaker B</span>
-            <span class="item-score"><span class="item-score-total">10</span><span class="item-score-max">20</span></span>
+            <span class="item-prize"></span>
             <span class="item-revise"><a href="#"><i class="fa fa-edit"></i></a></span>
           </div>
           <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Matter</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Manner</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold hr">Total</span>
+            <span class="item-score hr"><span class="item-score-total">10</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row hr">
             <span class="item-role">MO</span>
             <span class="item-speaker">Speaker C</span>
-            <span class="item-score"><span class="item-score-total">10</span><span class="item-score-max">20</span></span>
+            <span class="item-prize"></span>
             <span class="item-revise"><a href="#"><i class="fa fa-edit"></i></a></span>
           </div>
           <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Matter</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Manner</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold hr">Total</span>
+            <span class="item-score hr"><span class="item-score-total">10</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row hr">
             <span class="item-role">OR</span>
-            <span class="item-speaker">Speaker A</span>
-            <span class="item-score"><span class="item-score-total">10</span><span class="item-score-max">20</span></span>
+            <span class="item-speaker">So-So Long Name Speaker</span>
+            <span class="item-prize"><span class="item-prize-poi"><i class="fa fa-hand-paper-o"></i></span></span>
             <span class="item-revise"><a href="#"><i class="fa fa-edit"></i></a></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Matter</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold">Manner</span>
+            <span class="item-score"><span class="item-score-total">5</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row">
+            <span class="item-role"></span>
+            <span class="item-speaker no-bold hr">Total</span>
+            <span class="item-score hr"><span class="item-score-total">10</span><!--span class="item-score-max">20</span--></span>
+            <span class="item-revise"></span>
+          </div>
+          <div class="row hr">
+            <span class="item col-2">Total Score</span>
+            <span class="item-score"><span class="item-score-total">40</span><!--span class="item-score-max">80</span--></span>
+            <span class="item-revise"></span>
           </div>
         </form>
       </main>
     </section>
-    <section class="panel">
+    <section class="panel winner">
+      <header>
+        <a href="#">
+          <span class="team-header">Winner</span>
+          <span class="position-header">R1@304</span>
+          <span class="panel-arrow"><i class="fa fa-chevron-up"></i></span>
+        </a>
+      </header>
       <main>
         <form>
-          <div class="row">
-            <span class="item">Winner</span>
-            <span class="item-speaker">Team 2</span>
-            <span class="item">Opp</span>
-            <span class="item-revise"><a href="#"><i class="fa fa-edit"></i></a></span>
-          </div>
           <fieldset class="row">
-            <legend>Prizes</legend>
             <div class="row">
-              <span class="item">Best D.</span>
-              <span class="item-speaker">Speaker B</span>
-              <span class="item-role">PM</span>
+              <span class="item-role">Opp</span>
+              <span class="item-speaker col-2">Long Long Team Name A</span>
               <span class="item-revise"><a href="#"><i class="fa fa-edit"></i></a></span>
             </div>
             <div class="row">
-              <span class="item">POI</span>
-              <span class="item-speaker">Speaker C</span>
-              <span class="item-role">MG</span>
-              <span class="item-revise"><a href="#"><i class="fa fa-edit"></i></a></span>
+              <span class="item-role"></span>
+              <span class="item-speaker" style="font-weight: normal;">Margin</span>
+              <span class="item-score"><span class="item-score-total">0</span><!--span class="item-score-max">20</span--></span>
+              <span class="item-revise"></span>
+            </div>
+          </fieldset>
+          <fieldset class="row">
+            <legend>Signature</legend>
+            <div class="row no-flexbox">
+              <span class="item-signature"><input class="signature" type="text" value=" Adjudicator X"></span>
             </div>
           </fieldset>
         </form>
